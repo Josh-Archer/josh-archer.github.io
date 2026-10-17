@@ -118,6 +118,33 @@ class TestSite(unittest.TestCase):
             self.assertIn(repo_link, self.html, f"Project list must include link to real repo {repo}")
             self.assertIn(repo, self.html, f"Project card must display repo name {repo}")
 
+    EXCLUDED_REPOS = [
+        "snake",
+        "8PuzzleAStar",
+        "AlumNet",
+        "CurrencyConversion",
+        "Heisman",
+        "GISDirectedStudies",
+        "SentenceReadingAgent",
+        "Cenith",
+        "nlp-hw4",
+    ]
+
+    def test_excluded_repos_do_not_appear(self):
+        # Repositories deemed unimportant must not appear in project list or site
+        for repo in self.EXCLUDED_REPOS:
+            repo_link = f"https://github.com/Josh-Archer/{repo}"
+            self.assertNotIn(
+                repo_link,
+                self.html,
+                f"Excluded repository link must not appear: {repo_link}",
+            )
+            self.assertNotIn(
+                repo,
+                self.html,
+                f"Excluded repository name must not appear: {repo}",
+            )
+
     def test_todo_placeholders_present(self):
         # Prompt requirement: do not invent bio details, employers or contact info, leave clearly marked TODO placeholders
         todos = re.findall(r'TODO.*?', self.html, re.IGNORECASE)
