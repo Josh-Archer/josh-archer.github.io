@@ -3,219 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Josh Archer</title>
-  <meta name="description" content="Personal site of Josh Archer, with a link to the GitHub profile.">
-  <style>
-    :root {
-      --bg: #f6f3ec;
-      --ink: #1b1916;
-      --muted: #534e46;
-      --line: #d8d1c4;
-      --link: #0f3d2c;
-      --link-hover: #0a2a1e;
-      --focus: #0f3d2c;
-      color-scheme: light;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #161513;
-        --ink: #f3efe6;
-        --muted: #c4bdb0;
-        --line: #3c3832;
-        --link: #b7e4cd;
-        --link-hover: #e5f7ee;
-        --focus: #b7e4cd;
-        color-scheme: dark;
-      }
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      height: 100%;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      font-size: 1.125rem;
-      line-height: 1.5;
-    }
-
-    .skip {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    .skip:focus {
-      position: static;
-      align-self: flex-start;
-      display: inline-block;
-      width: auto;
-      height: auto;
-      margin: 0 0 1rem;
-      padding: 0.65rem 0.9rem;
-      overflow: visible;
-      clip-path: none;
-      white-space: normal;
-      background: var(--ink);
-      color: var(--bg);
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-      outline: 3px solid var(--focus);
-      outline-offset: 3px;
-    }
-
-    .page {
-      display: flex;
-      flex-direction: column;
-      width: min(100%, 40rem);
-      min-height: 100vh;
-      min-height: 100dvh;
-      margin-inline: auto;
-      padding: clamp(1.25rem, 4vw, 3rem);
-    }
-
-    header {
-      border-top: 3px solid var(--ink);
-      padding-top: 0.75rem;
-    }
-
-    .domain {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.8125rem;
-      letter-spacing: 0.04em;
-    }
-
-    main {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: center;
-      padding-block: clamp(2.5rem, 10vh, 6rem);
-    }
-
-    main:focus {
-      outline: 3px solid var(--focus);
-      outline-offset: 0.5rem;
-    }
-
-    h1 {
-      margin: 0 0 1.25rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 1px solid var(--line);
-      font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-      font-size: clamp(2.75rem, 12vw, 5.25rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 0.95;
-      text-wrap: balance;
-      hyphens: manual;
-    }
-
-    .lede {
-      margin: 0 0 2rem;
-      color: var(--muted);
-      font-size: 1.25rem;
-    }
-
-    nav {
-      margin: 0;
-    }
-
-    .profile {
-      display: inline-grid;
-      gap: 0.15rem;
-      min-height: 44px;
-      padding-block: 0.25rem;
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    .profile .label {
-      font-weight: 600;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.18em;
-    }
-
-    .profile .url {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .profile:hover .label,
-    .profile:focus-visible .label {
-      color: var(--link-hover);
-      text-decoration-thickness: 3px;
-    }
-
-    .profile:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 4px;
-    }
-
-    @media (forced-colors: active) {
-      .skip:focus,
-      .profile:focus-visible,
-      main:focus {
-        outline: 3px solid Highlight;
-      }
-    }
-
-    @media print {
-      .skip {
-        display: none;
-      }
-
-      body {
-        background: #fff;
-        color: #000;
-      }
-
-      .domain,
-      .lede,
-      .profile,
-      .profile .url {
-        color: #000;
-      }
-    }
-  </style>
+  <title>Josh Archer | Personal Site &amp; Projects</title>
+  <meta name="description" content="Personal site of Josh Archer featuring public open-source software projects and GitHub profile links.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <a class="skip" href="#content">Skip to content</a>
-    <header>
-      <p class="domain">josh-archer.github.io</p>
-    </header>
-    <main id="content" tabindex="-1">
-      <h1>Josh Archer</h1>
-      <p class="lede">Personal site.</p>
-      <nav aria-label="Primary">
-        <a class="profile" href="https://github.com/Josh-Archer" rel="me">
-          <span class="label">GitHub profile</span>
-          <span class="url">github.com/Josh-Archer</span>
-        </a>
+  <a class="skip" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <p class="site-title"><a href="#main-content">josh-archer.github.io</a></p>
+      <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="https://github.com/Josh-Archer" rel="me">GitHub</a></li>
+        </ul>
       </nav>
-    </main>
-  </div>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Josh Archer</h1>
+        <p class="lede">Personal website and portfolio of open-source software projects.</p>
+        <div class="meta-details">
+          <span class="meta-item"><span class="meta-label">Location:</span> Atlanta</span>
+          <span class="meta-item"><span class="meta-label">Company:</span> American Express</span>
+          <span class="meta-item"><span class="meta-label">GitHub:</span> <a href="https://github.com/Josh-Archer" rel="me">@Josh-Archer</a></span>
+        </div>
+      </section>
+
+      <section id="about" class="content-section" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>Software engineer based in Atlanta, with public open-source projects across Go, Python, Rust, TypeScript, C#, and C++.</p>
+        <div class="todo-placeholder">
+          <p><strong>TODO:</strong> Add detailed bio and background information.</p>
+        </div>
+        <div class="todo-placeholder">
+          <p><strong>TODO:</strong> Add employer history and professional experience details.</p>
+        </div>
+      </section>
+
+      <section id="projects" class="content-section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <p class="section-intro">A selection of public, non-archived open-source repositories from GitHub:</p>
+        <ul class="project-grid">
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/terraform-provider-seerr">terraform-provider-seerr</a></h3>
+                <span class="project-badge">Go</span>
+              </div>
+              <p class="project-desc">terraform module to manage your seerr instance</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/terraform-provider-seerr">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/homeassistant-addon-muse-gadget">homeassistant-addon-muse-gadget</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Home Assistant Add-on to bridge Meta Muse AI Agent via the Muse Gadget SDK</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/homeassistant-addon-muse-gadget">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/vaultwarden-eso-bridge">vaultwarden-eso-bridge</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Vaultwarden ESO bridge chart/runtime</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/vaultwarden-eso-bridge">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/AdvancedPacketCapturer">AdvancedPacketCapturer</a></h3>
+                <span class="project-badge">C#</span>
+              </div>
+              <p class="project-desc">An advanced packet capturer in C# using the WinPCap library. Will capture packets, do ARP cache poisoning and Smurf attack.</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/AdvancedPacketCapturer">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/linux-quest">linux-quest</a></h3>
+                <span class="project-badge">Rust</span>
+              </div>
+              <p class="project-desc">High-performance, ultra-low latency spatial multi-monitor desktop streamer from Linux (Ubuntu) to Meta Quest in Rust</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/linux-quest">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/local-swe-agent">local-swe-agent</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">AI-powered local SWE agent with vLLM, RAG, and autonomous coding capabilities for K3s</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/local-swe-agent">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/agent-meter">agent-meter</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Local GNOME desktop and top-bar usage meter for coding-agent CLIs</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/agent-meter">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/terraform-provider-chaptarr">terraform-provider-chaptarr</a></h3>
+                <span class="project-badge">Go</span>
+              </div>
+              <p class="project-desc">Terraform and OpenTofu provider for Chaptarr</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/terraform-provider-chaptarr">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/bitwarden-mfa-auth-migrator">bitwarden-mfa-auth-migrator</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Automate migration from auth services. e.g. - Google Authenticator to Bitwarden</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/bitwarden-mfa-auth-migrator">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/unified-ephemeral-runner-broker">unified-ephemeral-runner-broker</a></h3>
+                <span class="project-badge">Go</span>
+              </div>
+              <p class="project-desc">Unified ephemeral runner capacity broker for ARC, Lambda, Cloud Run, and Azure Functions</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/unified-ephemeral-runner-broker">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/cleanarr">cleanarr</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Public runtime for Cleanarr job and webhook harnesses</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/cleanarr">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/mt7925-bt-recovery">mt7925-bt-recovery</a></h3>
+                <span class="project-badge">C</span>
+              </div>
+              <p class="project-desc">DKMS recovery backport for MediaTek MT7925 Bluetooth firmware timeouts</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/mt7925-bt-recovery">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/emotional-prompt">emotional-prompt</a></h3>
+                <span class="project-badge">Python</span>
+              </div>
+              <p class="project-desc">Repo to house my emotional llm for class project.</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/emotional-prompt">View on GitHub &rarr;</a>
+            </article>
+          </li>
+          <li class="project-card">
+            <article>
+              <div class="project-header">
+                <h3 class="project-title"><a href="https://github.com/Josh-Archer/CppPractice">CppPractice</a></h3>
+                <span class="project-badge">C++</span>
+              </div>
+              <p class="project-desc">Just playing with CMake and VCPkg with C++</p>
+              <a class="project-link-action" href="https://github.com/Josh-Archer/CppPractice">View on GitHub &rarr;</a>
+            </article>
+          </li>
+        </ul>
+        <div class="projects-footer">
+          <a class="view-all-link" href="https://github.com/Josh-Archer?tab=repositories">View all repositories on GitHub &rarr;</a>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <a href="https://github.com/Josh-Archer" rel="me">
+              <span>GitHub: github.com/Josh-Archer</span>
+            </a>
+          </li>
+        </ul>
+        <div class="todo-placeholder">
+          <p><strong>TODO:</strong> Add direct email address and additional contact channels.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Josh Archer. Hosted on GitHub Pages.</p>
+      <p><a href="#main-content">Back to top &uarr;</a> &middot; <a href="https://github.com/Josh-Archer" rel="me">GitHub</a> &middot; <a href="https://github.com/Josh-Archer/josh-archer.github.io">Source Code</a></p>
+    </div>
+  </footer>
 </body>
 </html>
